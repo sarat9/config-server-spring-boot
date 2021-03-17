@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClientController {
 	Logger logger = LoggerFactory.getLogger(ClientController.class);
     
-//    @Value("${my.greeting.message}")
-    @Value("${info.description}")
+    @Value("${my.greeting.message}")
     private String greetingMessage;
     
     @Value("${app.message}")
