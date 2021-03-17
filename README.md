@@ -19,12 +19,18 @@ In the context of large number of Microservice based applications, we want the a
 - Any changes to any given property does not necessitate the re-deployment of service which is using that property. 
 
 
-https://miro.medium.com/max/932/1*R3KQqB1r0y652cj70YTcaw.png
+![MicroService Config Server ](https://miro.medium.com/max/932/1*R3KQqB1r0y652cj70YTcaw.png)# MicroService Config Server Sample!
+
+![MicroService Config Server ](https://miro.medium.com/max/1050/1*a4z8iptdPYWG3OhJZ2EArQ.png)# MicroService Config Server Sample!
+
+
+
 
 https://miro.medium.com/max/1050/1*a4z8iptdPYWG3OhJZ2EArQ.png
 
 
 **How do we make this work without a restart ?**
+
 The answer is “**/actuator/refresh**” endpoint on the client. if the endpoint is hit on the client, it will force the server to reload the configuration and provide client with the new value.
 
 is this a good solution ?? yes and no.. lets take a real time example
@@ -33,6 +39,7 @@ To get the changed configs from the Config Server, we have to manually trigger t
 
 
 **Src and Ref:**
+
 https://medium.com/@ijayakantha/microservices-centralized-configuration-with-spring-cloud-f2a1f7b78cc2
 https://medium.com/@athulravindran/bootstrapping-spring-cloud-config-server-8c32b7d9c0ab
 https://medium.com/walmartglobaltech/manage-application-configuration-using-spring-cloud-config-80b27ecb34b7
