@@ -1,16 +1,18 @@
 # config-server-spring-boot
-Central Configuration Server with Spring boot Cloud
+#### Central Configuration Server with Spring boot Cloud
 
-Config server is where all configurable parameters of all microservices are stored and maintained.It is more like externalizing properties/resource file out of project codebase to an external service altogether so that any changes to any given property does not necessitate the re-deployment of service which is using that property. 
+Config server is where all configurable parameters of all microservices are stored and maintained.
+It is more like externalizing properties/resource file out of project codebase to an external service altogether so that any changes to any given property does not necessitate the re-deployment of service which is using that property. 
 
-Problem
+**Problem**
 - In micro-service world, managing configurations of each service separately is a tedious and time-consuming task. In other words, if there are many number of modules, and managing properties for each module with the traditional approach is very difficult.
 - In a monolith there is one place where the property files are stored and when changes are needed, there is only one place that they need to be updated. In a microservice architecture, each microservice owns its own properties. This can result in duplication of a single property value across multiple microservices. If that value needs to be updated it will need to be changed in every microservice. This isn’t a big deal if you only have one or two microservices, but if that property is used in 10, 20, or 30 different ones you will have to make the change in each one and re-deploy it for the change to take effect.
 
 
+**Solution**:
 Central configuration server provides configurations (properties) to each micro service connected.
 
-Use
+**Use**:
 - Centralized Configuration with Spring Cloud
 In the context of large number of Microservice based applications, we want the ability to configure and manage the configuration properties of all MicroServices from a centralized place.
 - Config server is where all configurable parameters of all microservices are stored and maintained.It is more like externalizing properties/resource file out of project codebase to an external service altogether. 
@@ -22,14 +24,15 @@ https://miro.medium.com/max/932/1*R3KQqB1r0y652cj70YTcaw.png
 https://miro.medium.com/max/1050/1*a4z8iptdPYWG3OhJZ2EArQ.png
 
 
-How do we make this work without a restart ?
-The answer is “/actuator/refresh” endpoint on the client. if the endpoint is hit on the client, it will force the server to reload the configuration and provide client with the new value.
+**How do we make this work without a restart ?**
+The answer is “**/actuator/refresh**” endpoint on the client. if the endpoint is hit on the client, it will force the server to reload the configuration and provide client with the new value.
+
 is this a good solution ?? yes and no.. lets take a real time example
 To get the changed configs from the Config Server, we have to manually trigger the /actuator/refresh endpoint in the application. When this endpoint is triggered, every bean marked with an @RefreshScope is refreshed and the new configs become available in the application.
 
 
 
-Src and Ref:
+**Src and Ref:**
 https://medium.com/@ijayakantha/microservices-centralized-configuration-with-spring-cloud-f2a1f7b78cc2
 https://medium.com/@athulravindran/bootstrapping-spring-cloud-config-server-8c32b7d9c0ab
 https://medium.com/walmartglobaltech/manage-application-configuration-using-spring-cloud-config-80b27ecb34b7
@@ -37,6 +40,6 @@ https://medium.com/design-and-tech-co/creating-a-configuration-microservice-usin
 https://codeburst.io/spring-cloud-config-centralized-configuration-in-microservices-f4ec243512db
 
 
-###Methods
+**Methods**
 
 https://stackoverflow.com/questions/60500158/how-to-point-spring-cloud-config-server-to-a-git-folder-inside-a-git-repo/66583651#66583651
