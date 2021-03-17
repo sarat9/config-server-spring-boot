@@ -4,6 +4,20 @@
 Config server is where all configurable parameters of all microservices are stored and maintained.
 It is more like externalizing properties/resource file out of project codebase to an external service altogether so that any changes to any given property does not necessitate the re-deployment of service which is using that property. 
 
+## Application Architecture
+
+The application consists of 2 different Microservices
+
+-   [config-server](https://github.com/sarat9/config-server-spring-boot/tree/main/config-server)  - Config Server in Spring Boot 
+-   [config-client](https://github.com/sarat9/config-server-spring-boot/tree/main/config-client)  - Microservice App as Config Client in Spring Boot
+-   [config-repo](https://github.com/sarat9/config-server-spring-boot/tree/main/config-repo)  - Git repo with all configuation files
+
+
+*Optional* - [microservices-architect-config-starter](https://github.com/sarat9/microservices-architect-config-starter)  -  This repo has seven other microservices, you can chose to connect them if you want.
+
+
+
+
 **Problem**
 - In micro-service world, managing configurations of each service separately is a tedious and time-consuming task. In other words, if there are many number of modules, and managing properties for each module with the traditional approach is very difficult.
 - In a monolith there is one place where the property files are stored and when changes are needed, there is only one place that they need to be updated. In a microservice architecture, each microservice owns its own properties. This can result in duplication of a single property value across multiple microservices. If that value needs to be updated it will need to be changed in every microservice. This isn’t a big deal if you only have one or two microservices, but if that property is used in 10, 20, or 30 different ones you will have to make the change in each one and re-deploy it for the change to take effect.
@@ -11,6 +25,9 @@ It is more like externalizing properties/resource file out of project codebase t
 
 **Solution**:
 Central configuration server provides configurations (properties) to each micro service connected.
+
+Config server is where all configurable parameters of all microservices are stored and maintained.
+It is more like externalizing properties/resource file out of project codebase to an external service altogether so that any changes to any given property does not necessitate the re-deployment of service which is using that property. 
 
 **Use**:
 - Centralized Configuration with Spring Cloud
