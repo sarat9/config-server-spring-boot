@@ -5,6 +5,17 @@ Central Configuration Server with Spring boot Cloud
 
 #config-server
 
+#
+
+## Build Instruction
+```
+mvn clean install
+java -jar .\target\config-server-0.0.1-SNAPSHOT.jar
+```
+
+*App runs on port **8888***
+
+##
 
 
 
