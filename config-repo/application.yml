@@ -1,3 +1,3 @@
 my:    
   greeting:
-    message:  helloworld from config server
+    message:  Hi All, This is from config server
